@@ -57,7 +57,7 @@ endif()
 if(CMAKE_HOST_WIN32 AND VCPKG_TARGET_IS_MINGW AND NOT HOST_TRIPLET MATCHES "mingw")
     # Assuming no cross compiling because the host (windows) pkgdata tool doesn't
     # use the '/' path separator when creating compiler commands for mingw bash.
-elseif(VCPKG_CROSSCOMPILING)
+elseif(VCPKG_CROSSCOMPILING OR NOT "tools" IN_LIST FEATURES)
     set(TOOL_PATH "${CURRENT_HOST_INSTALLED_DIR}/tools/${PORT}")
     # convert to unix path
     string(REGEX REPLACE "^([a-zA-Z]):/" "/\\1/" _VCPKG_TOOL_PATH "${TOOL_PATH}")
