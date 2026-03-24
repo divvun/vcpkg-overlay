@@ -72,6 +72,7 @@ vcpkg_make_configure(
         --disable-samples
         --disable-tests
         --disable-layoutex
+        --with-data-packaging=static
     OPTIONS_RELEASE
         --disable-debug
         --enable-release
